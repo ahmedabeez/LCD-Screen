@@ -1,0 +1,18 @@
+Develop the program to give same output as in previous question, but with 
+blinking text
+
+#include <LiquidCrystal.h>
+// Creating an instance of the LiquidCrystal class with specified pin connections
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+void setup() {
+ lcd.begin(16, 2); // Initializing the LCD with 16 columns and 2 rows
+}
+void loop() {
+ lcd.clear(); // Clearing the LCD display
+ delay(500); // Introducing a delay of 500 milliseconds
+ lcd.setCursor(2, 0); // Setting the cursor position to column 2, row 0
+ lcd.print("Abeez and Auj"); // Printing the text "Abeez and Auj" at the current cursor position
+ lcd.setCursor(1, 1); // Setting the cursor position to column 1, row 1
+ lcd.print("ME201002-201065"); // Printing the text "ME201002-201065" at the current cursor position
+ delay(500); // Introducing another delay of 500 milliseconds before the next iteration
+}
