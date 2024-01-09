@@ -1,0 +1,15 @@
+//Develop the program to give same output as in previous question, but with autoscrolling text.
+
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // Creating an instance of the Liquid Crystal class with specified pin connections
+void setup() {
+ lcd.begin(16, 2); // Initializing the LCD with 16 columns and 2 rows
+}
+void loop() {
+ lcd.setCursor(2, 0); // Setting the cursor position to column 2, row 0
+ lcd.print("Abeez and Auj"); // Printing the text "Abeez and Auj" at the current cursor position
+ lcd.setCursor(1, 1); // Setting the cursor position to column 1, row 1
+ lcd.print("ME201002-201065"); // Printing the text "ME201002-201065" at the current cursor position
+ lcd.scrollDisplayLeft(); // Scroll the entire display one position to the left
+delay(200); // Introducing a delay of 200 milliseconds to control the scrolling speed
+}
